@@ -31,7 +31,7 @@ export default function GettingStarted() {
                   <img
                     src="https://r2.e-z.host/79f1dfbe-9f00-4424-b625-30ad40c4f239/r161sa2p.png"
                     alt="Kivex Store"
-                    className="max-w-full h-auto rounded-lg shadow-lg"
+                    className="w-full h-auto max-h-[60vh] object-contain rounded-lg shadow-lg"
                   />
                 </div>
                 <div className="flex justify-center">

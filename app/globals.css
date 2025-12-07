@@ -195,3 +195,21 @@ button, a {
 .border-cyan-800 {
   @apply !border-gray-300 dark:!border-gray-600;
 }
+
+/* Global image styling to prevent scrolling and ensure proper fitting */
+img {
+  @apply max-w-full h-auto;
+}
+
+/* Specific styling for Next.js Image component to fit within viewport */
+.next-image-container img,
+img[src^="http"],
+img[src^="https"] {
+  @apply max-h-[70vh] object-contain;
+}
+
+/* For images in content sections */
+section img,
+figure img {
+  @apply max-h-[60vh] object-contain rounded-lg;
+}

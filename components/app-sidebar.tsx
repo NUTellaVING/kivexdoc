@@ -1,13 +1,8 @@
 "use client"
 
-import { Search, FileText, Zap, ShoppingCart, CreditCard, RotateCcw, Mail, Phone, MessageSquare, Home as HomeIcon, ChevronRight, Calculator, Package } from "lucide-react"
+import { Search, FileText, Zap, CreditCard, RotateCcw, Phone, Home as HomeIcon, Calculator, Package } from "lucide-react"
 import * as React from "react"
 
-import {
-  Collapsible,
-  CollapsibleContent,
-  CollapsibleTrigger,
-} from "@/components/ui/collapsible"
 import {
   Sidebar,
   SidebarContent,
@@ -15,9 +10,6 @@ import {
   SidebarMenu,
   SidebarMenuButton,
   SidebarMenuItem,
-  SidebarMenuSub,
-  SidebarMenuSubButton,
-  SidebarMenuSubItem,
 } from "@/components/ui/sidebar"
 import { Input } from "@/components/ui/input"
 import { ThemeToggle } from "@/components/theme-toggle"
@@ -65,23 +57,7 @@ const items = [
   },
 ]
 
-const productItems = [
-  {
-    title: "ไก่ตันผลในกล่อง",
-    url: "/bf/box",
-  },
-  {
-    title: "ไก่ตันเผ่าV4 Tier 10",
-    url: "/bf/v4-t10",
-  },
-  {
-    title: "ไก่ตันอื่นๆ",
-    url: "/bf/others",
-  },
-]
-
 export function AppSidebar() {
-  const [isOpen, setIsOpen] = React.useState(false)
 
   return (
     <Sidebar>
@@ -117,30 +93,14 @@ export function AppSidebar() {
               </SidebarMenuButton>
             </SidebarMenuItem>
           ))}
-          <Collapsible asChild open={isOpen} onOpenChange={setIsOpen}>
-            <SidebarMenuItem>
-              <CollapsibleTrigger asChild>
-                <SidebarMenuButton>
-                  <ShoppingCart />
-                  <span>Blox Fruits</span>
-                  <ChevronRight className="ml-auto transition-transform duration-200 group-data-[state=open]/collapsible:rotate-90" />
-                </SidebarMenuButton>
-              </CollapsibleTrigger>
-              <CollapsibleContent>
-                <SidebarMenuSub>
-                  {productItems.map((item) => (
-                    <SidebarMenuSubItem key={item.title}>
-                      <SidebarMenuSubButton asChild>
-                        <a href={item.url}>
-                          <span>{item.title}</span>
-                        </a>
-                      </SidebarMenuSubButton>
-                    </SidebarMenuSubItem>
-                  ))}
-                </SidebarMenuSub>
-              </CollapsibleContent>
+          <SidebarMenuItem>
+              <SidebarMenuButton asChild>
+                <a href="/products">
+                  <Package />
+                  <span>รายการสินค้า</span>
+                </a>
+              </SidebarMenuButton>
             </SidebarMenuItem>
-          </Collapsible>
           {items.slice(3).map((item) => (
             <SidebarMenuItem key={item.title}>
               <SidebarMenuButton asChild>

@@ -10,6 +10,14 @@ const nextConfig: NextConfig = {
   turbopack: {},
   // Disable server components hydration warnings
   transpilePackages: ['lucide-react'],
+  images: {
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'r2.e-z.host',
+      },
+    ],
+  },
 };
 
 export default nextConfig;
